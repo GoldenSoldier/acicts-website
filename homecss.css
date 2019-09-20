@@ -1,0 +1,160 @@
+
+.anyContainer {
+    align-self: center;
+    justify-self: center;
+}
+
+.page {
+    width: calc(100vw - 17px - 40px);
+    height: calc(100vh - 40px);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    padding: 20px;
+}
+/*94211a maroon e89a06 yellow*/
+
+.pageText {
+    display: inline-grid;
+    grid-area: pageText;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: 5% auto 5%;
+    grid-template-areas:
+        ". . ."
+        ". pageContainer ."
+        ". . .";
+}
+
+.pageContainer {
+    display: inline-grid;
+    grid-area: pageContainer;
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+    grid-template-rows: 10vh auto 10vh;
+    font-family: HP Simplified;
+}
+
+.pageHeader {
+    font-size: 10vh;
+    align-self: center;
+    line-height: 100%;
+    font-family: Didot LT Std;
+}
+
+.page:nth-child(even) .pageHeader {
+    justify-self: right;
+}
+
+.pageDesc {
+    font-size: 2.2vh;
+    line-height: 150%;
+    align-self: center;
+    justify-self: center;
+}
+
+.page:nth-child(even) .pageDesc {
+    text-align: right;
+}
+
+#contact input[type=text] {
+    display: inline-grid;
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#contact textarea {
+    display: inline-grid;
+    justify-self: center;
+    align-self: center;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    font-family: HP Simplified;
+    font-size: 2vh;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#contact input[type=submit] {
+    display: inline-grid;
+    width: 94%;
+    height: 7vh;
+    border: 1.5px solid black;
+    background: transparent;
+    font-family: HP Simplified;
+    font-size: 2vh;
+}
+
+#contact input[type=submit]:hover {
+    transition: all 0.2s ease-out;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#contact textarea:focus, #contact input:focus {
+    outline: none;
+}
+
+#contact ::placeholder {
+    font-family: HP Simplified;
+    font-size: 2vh;
+    color: #111111;    
+}
+
+.pageButton {
+    height: 8vh;
+    width: 20vw;
+    align-self: center;
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: 2.3vh;
+    font-family: HP Simplified;
+}
+
+.page:nth-child(even) .pageButton {
+    justify-self: right;
+}
+
+.pageButton:hover {
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.pageImg {
+    display: inline-grid;
+    grid-area: pageImg;
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+    object-position: center;
+}
+
+.socialMedia {
+    justify-self: center;
+    display: inline;
+    height: 30px;
+    width: auto;
+    margin: 0 20px;
+    object-fit: cover;
+}
+
+.socialMedia:hover {
+    cursor: pointer;
+}

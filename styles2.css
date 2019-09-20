@@ -1,0 +1,318 @@
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#backgroundVid {
+    display: none;
+    height: 100vh;
+    width: calc(100vw - 17px);
+    object-fit: cover;
+    z-index: -99;
+}
+
+#mainContainer {
+    height: calc(100vh - 120px);
+    width: calc(100vw - 17px - 120px);
+    display: grid;
+    grid-template-columns: 5% auto;
+    grid-template-rows: calc(5vw - 0.85px) auto 10vh;
+    grid-template-areas:
+        "hamburger navContainer"
+        "stuff stuff"
+        "scroll scroll";
+    padding: 60px;
+}
+
+#mainBackgroundImage {
+    position: absolute;
+    height: 100vh;
+    width: calc(100vw - 17px);
+    object-fit: cover;
+    z-index: -99;
+}
+
+#hamburger {
+    display: inline-grid;
+    grid-area: hamburger;
+    object-fit: cover;
+    object-position: center;
+    justify-self: center;
+    align-self: center;
+    width: 3vw;
+    height: 3vw;
+    z-index: 100;
+}
+
+#navContainer {
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    display: inline-grid;
+    align-self: center;
+    grid-area: navContainer;
+    grid-template-columns: 45% 35% 20%;
+    grid-template-rows: 100%;
+    grid-template-areas: "nav . search";
+}
+
+#navContainer nav {
+    height: 100%;
+    width: 100%;
+    display: inline-grid;
+    align-self: center;
+    grid-area: nav;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+#navContainer nav a {
+    font-family: HP Simplified;
+    font-size: 2.35vh;
+    align-self: center;
+    text-align: center;
+    line-height: 400%;
+    padding: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+#navContainer nav a:hover{
+    transition: all 0.2s ease-out;
+    background-color: black;
+    color: white;
+}
+
+#navContainer input {
+    height: 100%;
+    display: inline-grid;
+    grid-area: search;
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    padding: 0px 0 0 35px;
+    font-family: Roboto;
+    background-image: url('images/search.png');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+#navContainer input:focus{
+    outline: none;
+}
+
+#navContainer ::placeholder {
+    color: #222222;
+    font-size: 2.2vh;
+    font-family: HP Simplified;
+    font-style: italic;
+}
+
+#dotsContainer {
+    /*display: inline-grid;*/
+    display: none;
+    grid-area: dots;
+    grid-template-rows: auto 25% auto;
+    grid-template-areas:
+        "."
+        "dot"
+        ".";
+}
+
+#dotHolder {
+    display: inline-grid;
+    grid-area: dot;
+    justify-self: center;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+
+.dot {
+    display: inline-grid;
+    align-self: center;
+    height: 10px;
+    width: 10px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+
+#contentContainer {
+    display: inline-grid;
+    grid-area: stuff;
+    height: 100%;
+    width: 100%;
+    justify-self: center;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "logo mainText";
+}
+
+#logo {
+    display: inline-grid;
+    grid-area: logo;
+    width: auto;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+}
+
+#text {
+    height: 100%;
+    width: 100%;
+    display: inline-grid;
+    grid-area: mainText;
+    align-self: center;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 29.5% 30% 12% auto;
+    grid-template-areas: 
+        "."
+        "header"
+        "description"
+        "button"
+        ".";
+}
+
+#header {
+    height: 100%;
+    display: inline-grid;
+    grid-area: header;
+    grid-template-rows: 25% 75%;
+    font-family: Didot LT Std;
+}
+
+#sub {
+    height: 100%;
+    line-height: 100%;
+    font-size: 4.5vh;
+    font-weight: bold;
+    align-self: center;
+}
+
+#main {
+    /*height: 100%;*/
+    line-height: 100%;
+    font-size: 13vh;
+    align-self: center;
+}
+
+#desc {
+    font-size: 2.2vh;
+    line-height: 150%;
+    font-family: HP Simplified;
+    display: inline-grid;
+    grid-area: description;
+    align-self: center;
+}
+
+#mainButton {
+    display: inline-grid;
+    grid-area: button;
+    width: 20vw;
+    height: 100%;
+    align-self: center;
+    background-color: transparent;
+    border: 2px solid black;
+    font-family: HP Simplified;
+    font-size: 2.35vh;
+    border-radius: 100px;
+}
+
+#mainButton:hover {
+    transition: all 0.2s ease-out;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#scrollHolder {
+    display: inline-grid;
+    grid-area: scroll;
+    height: 100%;
+}
+
+@keyframes moveDown {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(20%);}
+    100% {transform: translateY(60%;)}
+}
+
+#scrollPic {
+    display: inline-grid;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+    transform: translateY(0%);
+    animation-name: moveDown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+footer {
+    box-sizing: border-box;
+    display: grid;
+    height: 30vh;
+    background-color: #94211a;
+    padding: 30px 60px;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "footerLogo data";
+}
+
+#footerLogo {
+    display: inline-grid;
+    grid-area: footerLogo;
+    width: auto;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+}
+
+#data {
+    display: inline-grid;
+    grid-area: data;
+    align-self: center;
+    padding-left: 20px;
+}
+
+.text {
+    display: block;
+    padding: 5px;
+}
+
+.email {
+    display: block;
+    background-image: url('images/at.png');
+    background-size: 20px;
+    padding: 5px 5px 5px 25px;
+    background-repeat: no-repeat;
+    background-position: 2.5px;
+    text-decoration: underline;
+}
+
+.telNo {
+    display: block;
+    background-image: url('images/phone.png');
+    background-size: 20px;
+    padding: 5px 5px 5px 25px;
+    background-repeat: no-repeat;
+    background-position: 2.5px;
+}
+
+@font-face {
+    font-family: HP Simplified;
+    src: url('fonts/hp-simplified.ttf');
+}
+
+@font-face {
+    font-family: Didot LT Std;
+    src: url('fonts/DidotLTStd-Roman.otf');
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('fonts/Roboto-Regular.ttf');
+}

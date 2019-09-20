@@ -1,0 +1,165 @@
+#contact {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "message"
+        "other";
+}
+
+#message {
+    width: 90%;
+    box-sizing: border-box;
+    display: inline-grid;
+    grid-area: message;
+    padding: 20px;
+    grid-template-rows: 5vh 3vh auto;
+    grid-template-areas:
+        "head"
+        "sub"
+        "form";
+    justify-self: center;
+    justify-content: center;
+}
+
+#message h2 {
+    display: inline-grid;
+    grid-area: head;
+    font-size: 5vh;
+    line-height: 100%;
+    margin: 0;
+    align-self: center;
+    font-family: Didot LT Std;
+}
+
+#message p {
+    display: inline-grid;
+    grid-area: sub;
+    font-size: 2.3vh;
+    line-height: 100%;
+    margin: 6px 0 0 0;
+    align-self: center;
+}
+
+#msg {
+    margin-top: 20px;
+    display: inline-grid;
+    grid-area: form;
+    justify-self: center;
+    width: 220%;
+}
+
+#msg input[type=text], #msg input[type=email] {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#msg textarea {
+    box-sizing: border-box;
+    border: 0;
+    border-bottom: 1px solid;
+    font-family: Roboto;
+    font-size: 2vh;
+    padding: 10px;
+    margin: 5px 0;
+    height: 15vh;
+}
+
+#msg input[type=submit] {
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: transparent;
+    padding: 10px;
+    margin-top: 20px;
+    width: 40%;
+    justify-self: right;
+}
+
+#msg input[type=submit]:hover {
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    background-color: black;
+    color: white;
+}
+
+#otherContacts {
+    width: 90%;
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: inline-grid;
+    grid-area: other;
+    grid-template-columns: 1fr 1fr 3px 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "map other1 line other2"
+}
+
+#map {
+    display: inline-grid;
+    grid-area: map;
+    width: 100%;
+    height: 60vh;
+    align-self: center;
+    object-fit: cover;
+    object-position: center;
+}
+
+.info {
+    display: inline-grid;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+}
+
+.info h2 {
+    margin: 0;
+    font-family: Didot LT Std;
+    font-size: 5vh;
+    margin: 15px 0;
+}
+
+.info h2:first-child {
+    margin-top: 0;
+}
+
+#otherContacts hr {
+    display: inline-grid;
+    grid-area: line;
+    height: 70%;
+    align-self: center;
+    background-color: black;
+}
+
+#address {
+    display: block;
+    line-height: 170%;
+}
+
+.socialMediaContainer {
+    display: flex;
+    flex-direction: row;
+    height: 3vh;
+    align-self: center;
+}
+
+.socialMedia {
+    height: 100%;
+    width: auto;
+    margin: 0 10px;
+}
+
+.socialMedia:first-child {
+    margin-left: 0;
+}
+
+.socialMedia:last-child {
+    margin-right: 0;
+}
+
+.socialMedia:hover {
+    cursor: pointer;
+}

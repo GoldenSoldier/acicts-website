@@ -1,0 +1,199 @@
+#team {
+    box-sizing: border-box;
+    width: calc(100vw - 17px);
+    display: grid;
+    grid-template-rows: 50vh 50vh auto;
+    grid-template-columns: 100%;
+    padding: 0 20px;
+    grid-template-areas:
+        "tic"
+        "vip"
+        "others";
+}
+
+#tic {
+    box-sizing: border-box;
+    display: inline-grid;
+    grid-area: tic;
+    width: 50%;
+    height: 40vh;
+    /*background-color: lightgray;*/
+    justify-self: center;
+    align-self: center;
+    padding: 0 20px;
+    grid-template-columns: 40vh auto;
+    grid-template-rows: 100%;
+    grid-template-areas: "vipPicture vipDesc";
+    /*border-radius: 20px;*/
+}
+
+#vipContainer {
+    box-sizing: border-box;
+    grid-area: vip;
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.vip {
+    box-sizing: border-box;
+    display: grid;
+    width: 33vw;
+    padding: 0 15px;
+    margin: 0 3px;
+    grid-template-columns: 30vh auto;
+    grid-template-rows: 100%;
+    grid-template-areas: "vipPicture vipDesc";
+    /*background-color: rgba(255,255,255,0.2);*/
+}
+
+.vipPicture {
+    display: inline-grid;
+    grid-area: vipPicture;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+#ticDescContainer {
+    grid-template-rows: auto 3vh auto 3vh;
+    grid-template-areas:
+        "name"
+        "position"
+        "description"
+        "socialMedia";
+}
+
+.vipDescContainer {
+    display: inline-grid;
+    grid-area: vipDesc;
+    width: calc(100% - 3vh);
+    align-self: center;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto 3vh;
+    grid-template-areas:
+        "name"
+        "position"
+        "socialMedia";
+    padding: 0 0 0 3vh;
+}
+
+.name {
+    display: inline-grid;
+    grid-area: name;
+    font-size: 5vh;
+    line-height: 100%;
+    font-family: HP Simplified;
+}
+
+.position {
+    display: inline-grid;
+    grid-area: position;
+    font-size: 2.5vh;
+    font-family: HP Simplified;
+    margin: 10px 0;
+    line-height: 100%;
+}
+
+.description {
+    display: inline-grid;
+    grid-area: description;
+    margin: 10px 0;
+    /*width: 20%;*/
+}
+
+.socialMediaContainer {
+    grid-area: socialMedia;
+    display: flex;
+    flex-direction: row;
+    height: 3vh;
+    align-self: center;
+}
+
+.socialMedia {
+    height: 100%;
+    width: auto;
+    margin: 0 10px;
+}
+
+.socialMedia:first-child {
+    margin-left: 0;
+}
+
+.socialMedia:last-child {
+    margin-right: 0;
+}
+
+.socialMedia:hover {
+    cursor: pointer;
+}
+
+#others {
+    box-sizing: border-box;
+    grid-area: others;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    /*padding-top: 20px;*/
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.other {
+    display: grid;
+    grid-template-rows: 14.5vw auto;
+    grid-template-areas:
+        "otherPicture"
+        "otherDescContainer";
+    width: 18vw;
+    height: 45vh;
+    margin: 20px 10px;
+}
+
+.otherPicture {
+    display: inline-grid;
+    grid-area: otherPicture;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    justify-self: center;
+}
+
+.otherDescContainer {
+    padding: 10px;
+    display: inline-grid;
+    grid-area: otherDescContainer;
+    grid-template-rows: 3vh auto 3vh;
+    grid-template-areas:
+        "otherName"
+        "otherPosition"
+        "socialMedia";
+    justify-content: center;
+    align-content: space-around;
+}
+
+.otherDescContainer .socialMediaContainer {
+    justify-content: center;
+}
+
+.otherName {
+    display: inline-grid;
+    grid-area: otherName;
+    justify-self: center;
+    font-size: 3.4vh;
+    font-family: HP Simplified;
+    line-height: 100%;
+}
+
+.otherPosition {
+    display: inline-grid;
+    grid-area: otherPosition;
+    text-align: center;
+    align-self: center;
+}
